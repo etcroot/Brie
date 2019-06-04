@@ -1,0 +1,13 @@
+{
+    "token": "BOT TOKEN",
+    "prefix": "BOT PREFIX",
+    "owner": "YOUR USER ID",
+    "version": "BOT VERSION",
+    "ksofttoken": "KSOFT TOKEN",
+    "supporturl": "SUPPORT SERVER URL",
+    "website": "WEBSITE URL",
+    "github": "GITHUB URL",
+    "ownertag": "YOUR USERTAG EX: user#1111",
+    "library": "CURRENT LIBRARY / VERSION // WILL BE AUTOMATIC LATER",
+    "node": "CURRENT NODE VERSION // WILL BE AUTOMATIC LATER"
+}
