@@ -10,7 +10,7 @@
 Brie is a discord bot made as a fun & easy to use bot. She has a easy to use command handler that automatically puts the commands into the `br!help` menu. Hopefully this project will expand further as i'm trying to improve it daily by adding new features, changing stuff for easier use & so on. If you wish to support any of my projects i'd be very appreciated. Here's a link to my <a href="https://www.patreon.com/etcroot" target="_blank">Patreon</a>, It helps me get motivation to keep developing my projects further & not to mention the server costs to keep Brie running 24/7 with a steady server.
 
 ### Links
-<a href="https://discordapp.com/oauth2/authorize/?permissions=1341643969&scope=bot&client_id=514802626647425054" target="_blank">Invite Brie</a> | <a href="https://discord.gg/qXth2rb" target="_blank">Support Server</a> | <a href="https://github.com/etcroot/Brie/wiki" target="_blank">Brie Wiki</a>
+<a href="https://discordapp.com/oauth2/authorize/?permissions=1341643969&scope=bot&client_id=514802626647425054" target="_blank">Invite Brie</a> | <a href="https://discord.gg/JSRZCyn" target="_blank">Support Server</a> | <a href="https://github.com/etcroot/Brie/wiki" target="_blank">Brie Wiki</a>
 
 ### Running the bot
 
