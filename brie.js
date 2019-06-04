@@ -1,8 +1,8 @@
 const { Client, Collection, Discord, MessageEmbed } = require('discord.js');
 const client = new Client();
 const { readdir } = require('fs');
-const { prefix, token } = require('./config.json');
-
+const { prefix, token, guildchannel } = require('./config.json');
+const fs = require("fs");
 client.commands = new Collection();
 client.categories = new Collection();
 
@@ -20,7 +20,7 @@ readdir("./events", (err, files) => {
 
 // Guild Join Event
 client.on('guildCreate', guild => {
-    let channel = client.channels.get("515275552244891659");
+    let channel = client.channels.get(guildchannel);
     client.user.setActivity(`${prefix}help | ${client.guilds.size} guilds`, { type: 'LISTENING' });
   const embed = new MessageEmbed()
   .setColor('#36393F')
@@ -33,7 +33,7 @@ client.on('guildCreate', guild => {
 
 // Guild Leave event
 client.on('guildDelete', guild => {
-    let channel = client.channels.get("515275542711369728");
+    let channel = client.channels.get(guildchannel);
     client.user.setActivity(`${prefix}help | ${client.guilds.size} guilds`, { type: 'LISTENING' });
   const embed = new MessageEmbed()
   .setColor('#36393F')
@@ -68,6 +68,7 @@ readdir('./commands', (err, folders) => {
 client.on('message', async message => {
     if(message.content.toLowerCase() === `<@${client.user.id}>`){
         let embed = new MessageEmbed()
+        .setThumbnail('https://cdn.discordapp.com/emojis/585531777607663811.png')
         .addField("Prefix", `\`${prefix}\``, true)
         .addField("Help", `\`${prefix}help\``, true)
         .setColor('#36393F');
