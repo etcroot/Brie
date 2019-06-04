@@ -6,7 +6,7 @@ module.exports = {
     description: 'Poke mentioned member.',
     execute: async (client, message, args) => {
         const mentioned = message.mentions.users.first();
-
+        // Add sentences to the responses in the embed title.
         var sentences = [
             `${message.author} pokes ${mentioned} annoyingly.`,
             `${message.author} starts to poke ${mentioned} gently.`,

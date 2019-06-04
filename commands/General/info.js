@@ -21,7 +21,7 @@ module.exports = {
         .addField('❯ Channel Count', `${client.channels.size}`, true)
         .addField('❯ Emojis Count', `${client.emojis.size}`, true)
         .addField('❯ Memory Usage', `${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB`, true)
-        .addField('❯ Useful Links', `[Website](${config.website}) | [Support Server](${config.supporturl}) | [Invite ${client.user.username}](https://discordapp.com/oauth2/authorize/?permissions=1341643969&scope=bot&client_id=${client.user.id}) | [Github](${config.github})`, false)
+        .addField('❯ Useful Links', `[Website](${config.website}) | [Support Server](${config.supporturl}) | [Invite ${client.user.username}](https://discordapp.com/oauth2/authorize/?permissions=2146958847&scope=bot&client_id=${client.user.id}) | [Github](${config.github})`, false)
         .setFooter(`${client.user.username} | By: ${config.ownertag}`)
         message.channel.send(embed);
 }

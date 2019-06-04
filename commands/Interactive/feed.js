@@ -6,7 +6,7 @@ module.exports = {
     description: 'Feed mentioned member.',
     execute: async (client, message, args) => {
         const mentioned = message.mentions.users.first();
-
+        // Add sentences to the responses in the embed title.
         var sentences = [
             `${message.author} shoves food deep down ${mentioned}'s throat.`,
             `${message.author} feeds ${mentioned} some delicious food.`,

@@ -5,7 +5,7 @@ module.exports = {
     description: 'Get someones avatar.',
     execute: async (client, message, args) => {
         const mentioned = message.mentions.users.first();
-
+        // If no mentions are provided.
         if (!message.mentions.users.size) {
             let embed = new MessageEmbed()
             .setColor('#363942')
@@ -14,11 +14,11 @@ module.exports = {
             .setImage(message.author.avatarURL())
             message.channel.send(embed);
         }
-
+        // Sorry but no bot avatar stealing.
         if (mentioned === client.user) {
             return message.channel.send('No.');
         }
-
+        // If mention is provided it will fetch the users avatar.
         if (mentioned) {
             let embed = new MessageEmbed()
             .setColor('#363942')

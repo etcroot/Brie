@@ -2,8 +2,8 @@ const fetch = require('node-fetch');
 const { MessageEmbed } = require('discord.js');
 
 module.exports = {
-    name: 'hentai',
-    description: 'Fetch random hentai.',
+    name: 'hthighs',
+    description: 'Fetch random hentai thighs.',
     execute: async (client, message, args) => {
 
         let embednotnsfw = new MessageEmbed()
@@ -15,15 +15,14 @@ module.exports = {
             return message.channel.send(embednotnsfw);
             
         }
-
-		const url = await fetch('https://nekos.life/api/v2/img/hentai')
+        const url = await fetch('https://nekobot.xyz/api/image?type=hthigh')
 			.then(response => response.json())
-			.then(body => body.url);
+			.then(body => body.message);
             let embed = new MessageEmbed()
-            .setTitle('Hentai')
+            .setTitle('Thighs')
             .setURL(url)
             .setColor('#363942')
             .setImage(url)
             message.channel.send(embed);
-}
-}
+	}
+  }

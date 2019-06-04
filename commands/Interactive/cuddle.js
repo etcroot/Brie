@@ -6,7 +6,7 @@ module.exports = {
     description: 'Cuddle mentioned member.',
     execute: async (client, message, args) => {
         const mentioned = message.mentions.users.first();
-
+        // Add sentences to the responses in the embed title.
         var sentences = [
             `${message.author} cuddles up close to ${mentioned}.`,
             `${message.author} embraces ${mentioned} & cuddles them.`,

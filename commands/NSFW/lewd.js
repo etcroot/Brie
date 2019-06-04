@@ -8,10 +8,9 @@ module.exports = {
 
         let embednotnsfw = new MessageEmbed()
         .setTitle('NSFW Error')
-        .setDescription('You can only use this in a NSFW channel.\nHere\'s how you enable it.')
+        .setDescription('You can only use this in a NSFW channel.')
         .setColor('#363942')
-        .setImage('http://etcroot.pw/XS2aDA.gif')
-
+        // NSFW Channel check will send the above embed if the channel is not set to NSFW.
         if(!message.channel === message.channel.nsfw) {
             return message.channel.send(embednotnsfw);
             

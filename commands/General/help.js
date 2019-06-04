@@ -30,7 +30,7 @@ module.exports = {
                 \`${config.prefix}help owner\` → get bot developer help menu.
             `])
             .addField('Prefix Information', `Prefix: \`${config.prefix}\`\nYou can also mention ${client.user} to get prefix info.`, false)
-            .addField('❯ Useful Links', `[Website](${config.website}) | [Support Server](${config.supporturl}) | [Invite ${client.user.username}](https://discordapp.com/oauth2/authorize/?permissions=1341643969&scope=bot&client_id=${client.user.id}) | [Github](${config.github})`, false)
+            .addField('❯ Useful Links', `[Website](${config.website}) | [Support Server](${config.supporturl}) | [Invite ${client.user.username}](https://discordapp.com/oauth2/authorize/?permissions=2146958847&scope=bot&client_id=${client.user.id}) | [Github](${config.github})`, false)
             return message.channel.send(embed);
         }
         // Sending interactive help menu.
@@ -70,10 +70,9 @@ module.exports = {
         // Sending NSFW help menu.
         if(command === 'nsfw') {
             let embednotnsfw = new MessageEmbed()
-             .setTitle('NSFW Error')
-             .setDescription('You can only use this in a NSFW channel.\nHere\'s how you enable it.')
-             .setColor('#363942')
-             .setImage('http://etcroot.pw/XS2aDA.gif')
+            .setTitle('NSFW Error')
+            .setDescription('You can only use this in a NSFW channel.')
+            .setColor('#363942')
 
              if(!message.channel === message.channel.nsfw) {
                  return message.channel.send(embednotnsfw);
@@ -85,10 +84,13 @@ module.exports = {
             .setFooter(`${client.user.username} | By: ${config.ownertag}`)
             .setDescription([`
             \`${config.prefix}ass\` → get random ass.
+            \`${config.prefix}anal\` → get random anal.
+            \`${config.prefix}pgif\` → get random porn gifs.
             \`${config.prefix}ecchi\` → get random ecchi.
             \`${config.prefix}hentai\` → get random hentai.
             \`${config.prefix}lewd\` → get random lewds.
             \`${config.prefix}thighs\` → get random thighs.
+            \`${config.prefix}hthighs\` → get random anime thighs.
             \`${config.prefix}yuri\` → get random yuri.
             `])
             return message.channel.send(embed);
