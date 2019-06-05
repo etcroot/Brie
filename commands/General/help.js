@@ -113,7 +113,6 @@ module.exports = {
             \`${config.prefix}hentai\` → get random hentai.
             \`${config.prefix}thighs\` → get random thighs.
             \`${config.prefix}hthighs\` → get random anime thighs.
-            \`${config.prefix}yuri\` → get random yuri.
             `])
             return message.channel.send(embed);
         }
