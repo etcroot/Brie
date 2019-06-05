@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const randomPuppy = require('random-puppy');
 
 module.exports = {
@@ -6,7 +6,7 @@ module.exports = {
     description: 'Get random ecchi',
     execute: async (client, message, args) => {
 
-        let embednotnsfw = new MessageEmbed()
+        let embednotnsfw = new RichEmbed()
         .setTitle('NSFW Error')
         .setDescription('You can only use this in a NSFW channel.')
         .setColor('#363942')
@@ -18,7 +18,7 @@ module.exports = {
 
         randomPuppy('ecchi')
             .then(url => {
-                const embed = new MessageEmbed()
+                const embed = new RichEmbed()
                 .setTitle(`Ecchi`)
                 .setImage(url)
                 .setColor('#363942')

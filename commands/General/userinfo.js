@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 require('moment-duration-format');
 
 module.exports = {
@@ -9,10 +9,10 @@ module.exports = {
         // If no mention or argument is specified.
         if(!args[0]) {
             const member = message.author;
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setTitle('__User Information__')
             .setColor('#36393F')
-            .setThumbnail(message.author.avatarURL())
+            .setThumbnail(message.author.avatarURL)
             .setDescription('Userinfo about: `' + message.author.username + '`')
             .addField('❯ Username', message.author.username, true)
             .addField('❯ Display Name', message.author.username, true)
@@ -22,10 +22,10 @@ module.exports = {
             return message.channel.send(embed);
         }
         // Fetching mentioned user.
-        let embed = new MessageEmbed()
+        let embed = new RichEmbed()
         .setTitle('__User Information__')
         .setColor('#36393F')
-        .setThumbnail(mentioned.avatarURL())
+        .setThumbnail(mentioned.avatarURL)
         .setDescription('Userinfo about: `' + mentioned.username + '` \nRequested by: `' + message.author.username + '`')
         .addField('❯ Username', mentioned.username, true)
         .addField('❯ Display Name', mentioned.username, true)

@@ -1,7 +1,7 @@
-const { Client, Collection, Discord, MessageEmbed } = require('discord.js');
+const { Client, Collection, Discord, RichEmbed } = require('discord.js');
 const client = new Client();
 const { readdir } = require('fs');
-const { prefix, token, guildchannel } = require('./config.json');
+const { prefix, token, guildchannel, ytkey, owner } = require('./config.json');
 const fs = require("fs");
 client.commands = new Collection();
 client.categories = new Collection();
@@ -15,14 +15,35 @@ readdir("./events", (err, files) => {
     });
   });
 
-  // Mention Event
+// Music
+client.music = require("discord.js-musicbot-addon");
 
-
+client.music.start(client, {
+  youtubeKey: ytkey,
+  anyoneCanSkip: true,
+  help: {
+    enabled: false,
+  },
+  ownerOverMember: true,
+  inlineEmbeds: true,
+  musicPresence: false,
+  clearPresence: false,
+  messageHelp: true,
+  defVolume: "80",
+  botPrefix: prefix,
+  ownerID: owner,
+  cooldown: {
+    enabled: false,
+    timer: 1000,
+    exclude: ["volume","queue","pause","resume","np"]
+  }
+});
+ 
 // Guild Join Event
 client.on('guildCreate', guild => {
     let channel = client.channels.get(guildchannel);
     client.user.setActivity(`${prefix}help | ${client.guilds.size} guilds`, { type: 'LISTENING' });
-  const embed = new MessageEmbed()
+  const embed = new RichEmbed()
   .setColor('#36393F')
   .setAuthor(`Joined ${guild.name}`)
   .addField("Owner", guild.owner.user.tag)
@@ -35,7 +56,7 @@ client.on('guildCreate', guild => {
 client.on('guildDelete', guild => {
     let channel = client.channels.get(guildchannel);
     client.user.setActivity(`${prefix}help | ${client.guilds.size} guilds`, { type: 'LISTENING' });
-  const embed = new MessageEmbed()
+  const embed = new RichEmbed()
   .setColor('#36393F')
   .setAuthor(`Left ${guild.name}`)
   .addField("Owner", guild.owner.user.tag)
@@ -67,7 +88,7 @@ readdir('./commands', (err, folders) => {
 
 client.on('message', async message => {
     if(message.content.toLowerCase() === `<@${client.user.id}>`){
-        let embed = new MessageEmbed()
+        let embed = new RichEmbed()
         .setThumbnail('https://cdn.discordapp.com/emojis/585531777607663811.png')
         .addField("Prefix", `\`${prefix}\``, true)
         .addField("Help", `\`${prefix}help\``, true)

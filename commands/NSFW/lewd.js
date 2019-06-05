@@ -6,7 +6,7 @@ module.exports = {
     description: 'Fetch random lewds.',
     execute: async (client, message, args) => {
 
-        let embednotnsfw = new MessageEmbed()
+        let embednotnsfw = new RichEmbed()
         .setTitle('NSFW Error')
         .setDescription('You can only use this in a NSFW channel.')
         .setColor('#363942')
@@ -19,7 +19,7 @@ module.exports = {
 		const url = await fetch('https://nekos.life/api/v2/img/lewd')
 			.then(response => response.json())
 			.then(body => body.url);
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setTitle('Lewd')
             .setURL(url)
             .setColor('#363942')

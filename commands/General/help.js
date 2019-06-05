@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const config = require('../../config.json');
 
 module.exports = {
@@ -8,10 +8,10 @@ module.exports = {
         const command = args.join(" ");
         // Sending help message when only writing help.
         if(!args[0]) {
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setTitle('General Commands')
             .setColor('#36393F')
-            .setThumbnail(client.user.displayAvatarURL())
+            .setThumbnail(client.user.displayAvatarURL)
             .setFooter(`${client.user.username} | By: ${config.ownertag}`)
             .setImage('https://i.imgur.com/uwGvstX.png')
             .setDescription([`
@@ -26,6 +26,7 @@ module.exports = {
             .addField('More Commands', [`
                 \`${config.prefix}help interactive\` → get interactive help menu.
                 \`${config.prefix}help misc\` → get misc help menu.
+                \`${config.prefix}help music\` → get music help menu.
                 \`${config.prefix}help nsfw\` → get NSFW help menu.
                 \`${config.prefix}help owner\` → get bot developer help menu.
             `])
@@ -35,7 +36,7 @@ module.exports = {
         }
         // Sending interactive help menu.
         if(command === 'interactive') {
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setTitle('Help Menu → Interactive')
             .setColor('#36393F')
             .setFooter(`${client.user.username} | By: ${config.ownertag}`)
@@ -52,7 +53,7 @@ module.exports = {
         }
         // Sending misc help menu.
         if(command === 'misc') {
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setTitle('Help Menu → Misc')
             .setColor('#36393F')
             .setFooter(`${client.user.username} | By: ${config.ownertag}`)
@@ -67,9 +68,31 @@ module.exports = {
             `])
             return message.channel.send(embed);
         }
+        // Sending music help menu.
+        if(command === 'music') {
+            let embed = new RichEmbed()
+            .setTitle('Help Menu → Music')
+            .setColor('#36393F')
+            .setFooter(`${client.user.username} | By: ${config.ownertag}`)
+            .setDescription([`
+            \`${config.prefix}play\` → play music through url or search term.
+            \`${config.prefix}pause\` → pause the current audio.
+            \`${config.prefix}resume\` → resume the paused audio.
+            \`${config.prefix}stop\` → stop the current audio & clear queue.
+            \`${config.prefix}skip\` → skip the current audio.
+            \`${config.prefix}leave\` → leave the voice channel & clear queue.
+            \`${config.prefix}loop\` → loop through the queue.
+            \`${config.prefix}queue\` → check the current queue list.
+            \`${config.prefix}np\` → check what's currently playing.
+            \`${config.prefix}volume\` → set the audio volume.
+            \`${config.prefix}remove\` → remove a listing in the queue.
+            \`${config.prefix}clear\` → clear the queue.
+            `])
+            return message.channel.send(embed);
+        }
         // Sending NSFW help menu.
         if(command === 'nsfw') {
-            let embednotnsfw = new MessageEmbed()
+            let embednotnsfw = new RichEmbed()
             .setTitle('NSFW Error')
             .setDescription('You can only use this in a NSFW channel.')
             .setColor('#363942')
@@ -78,7 +101,7 @@ module.exports = {
                  return message.channel.send(embednotnsfw);
              }
 
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setTitle('Help Menu → NSFW')
             .setColor('#36393F')
             .setFooter(`${client.user.username} | By: ${config.ownertag}`)
@@ -102,7 +125,7 @@ module.exports = {
                return message.channel.send('YoOu\'re NoT mY DeVelOpEr!1?!');
             }
 
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setTitle('Help Menu → Owner')
             .setColor('#36393F')
             .setFooter(`${client.user.username} | By: ${config.ownertag}`)

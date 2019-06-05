@@ -1,5 +1,5 @@
 const request = require("request-promise");
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 
 module.exports = {
     name: 'shibe',
@@ -17,7 +17,7 @@ module.exports = {
 
         if (!response) return false;
 
-        const embed = new MessageEmbed()
+        const embed = new RichEmbed()
             .setTitle('Shibe OwO')
             .setColor('#363942')
             .setImage(response[0]);

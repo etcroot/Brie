@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const randomPuppy = require('random-puppy');
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
         // The subreddit to fetch from.
         randomPuppy('animemes')
                   .then(url => {
-                      const embed = new MessageEmbed()
+                      const embed = new RichEmbed()
                       .setTitle(`Anime Meme`)
                       .setImage(url)
                       .setColor('#363942')

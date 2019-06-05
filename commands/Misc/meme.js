@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const req = require('superagent');
 const { ksofttoken } = require('../../config.json');
 
@@ -10,7 +10,7 @@ module.exports = {
         .get('https://api.ksoft.si/images/random-meme')
         .set('Authorization', `Bearer ${ksofttoken}`);
 
-    const embed = new MessageEmbed()
+    const embed = new RichEmbed()
         .setTitle(title)
         .setURL(source)
         .setAuthor(`${auth}`, 'https://i.imgur.com/XTSExqJ.png')

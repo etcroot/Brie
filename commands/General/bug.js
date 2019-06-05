@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const { mainguild, bugreportchannel } = require('../../config.json');
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
         const guild = client.guilds.get(mainguild);
         // Change the channel ID to a existing channel of the guild id^ so the messages can send to the bug report channel.
         const channel = guild.channels.get(bugreportchannel);
-        const embed = new MessageEmbed()
+        const embed = new RichEmbed()
           .setTitle("New Bug Report")
           .setDescription(bug)
           .setColor('#36393F')

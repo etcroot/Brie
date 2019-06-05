@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const request = require("request-promise");
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
 
         if (!response) return false;
 
-        const embed = new MessageEmbed()
+        const embed = new RichEmbed()
             .setColor('#363942')
             .setDescription(`${message.author} licks ${mentioned}`)
             .setImage(`https://cdn.ram.moe${response.path.replace("i/", "")}`);

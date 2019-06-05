@@ -13,5 +13,6 @@
     "mainguild": "YOUR SUPPORT GUILD ID",
     "suggestchannel": "SUGGESTION CHANNEL ID FOR SUGGESTIONS",
     "bugreportchannel": "BUG REPORT CHANNEL ID FOR BUG REPORTS",
-    "guildchannel": "CHANNEL TO POST GUILD JOINS & LEAVES FOR THE BOT"
+    "guildchannel": "CHANNEL TO POST GUILD JOINS & LEAVES FOR THE BOT",
+    "ytkey": "YOUTUBE API KEY FOR MUSIC"
 }

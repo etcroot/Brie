@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 
 module.exports = {
     name: 'neko',
@@ -9,7 +9,7 @@ module.exports = {
 		const url = await fetch('https://nekos.life/api/v2/img/neko')
 			.then(response => response.json())
 			.then(body => body.url);
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setTitle('Neko')
             .setURL(url)
             .setColor('#363942')

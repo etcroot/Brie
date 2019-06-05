@@ -1,14 +1,14 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 require('moment-duration-format');
 
 module.exports = {
     name: 'serverinfo',
     description: 'Get server information.',
     execute: async (client, message, args) => {
-        let embed = new MessageEmbed()
+        let embed = new RichEmbed()
         .setTitle('__Server Information__')
         .setColor('#36393F')
-        .setThumbnail(message.guild.iconURL())
+        .setThumbnail(message.guild.iconURL)
         .setDescription('General Information About: ' + message.guild.name)
         .addField('❯ Server ID', message.guild.id, true)
         .addField('❯ Server Name', message.guild.name, true)

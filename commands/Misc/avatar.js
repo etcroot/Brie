@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 
 module.exports = {
     name: 'avatar',
@@ -7,11 +7,11 @@ module.exports = {
         const mentioned = message.mentions.users.first();
         // If no mentions are provided.
         if (!message.mentions.users.size) {
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setColor('#363942')
             .setTitle(message.author.username + "'s Avatar")
-            .setURL(message.author.avatarURL())
-            .setImage(message.author.avatarURL())
+            .setURL(message.author.avatarURL)
+            .setImage(message.author.avatarURL)
             message.channel.send(embed);
         }
         // Sorry but no bot avatar stealing.
@@ -20,11 +20,11 @@ module.exports = {
         }
         // If mention is provided it will fetch the users avatar.
         if (mentioned) {
-            let embed = new MessageEmbed()
+            let embed = new RichEmbed()
             .setColor('#363942')
             .setTitle(mentioned.username + "'s Avatar")
-            .setURL(mentioned.displayAvatarURL())
-            .setImage(mentioned.displayAvatarURL())
+            .setURL(mentioned.displayAvatarURL)
+            .setImage(mentioned.displayAvatarURL)
             message.channel.send(embed);
         }
 }

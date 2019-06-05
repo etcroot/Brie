@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const req = require('superagent');
 const { ksofttoken } = require('../../config.json');
 
@@ -10,7 +10,7 @@ module.exports = {
         .get('https://api.ksoft.si/images/random-wikihow')
         .set('Authorization', `Bearer ${ksofttoken}`);
 
-    const embed = new MessageEmbed()
+    const embed = new RichEmbed()
         .setTitle("How to " + title)
         .setURL(url)
         .setColor('#363942')

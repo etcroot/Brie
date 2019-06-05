@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const config = require('../../config.json');
 
 module.exports = {
@@ -6,12 +6,12 @@ module.exports = {
     description: 'Get bot information.',
     execute: async (client, message, args) => {
         // You can change this to whatever you want, i suggest editing it.
-        let embed = new MessageEmbed()
+        let embed = new RichEmbed()
         .setTitle(`${client.user.username} Information`)
         .setColor('#36393F')
         .setImage('https://i.imgur.com/uwGvstX.png')
         .setDescription(`My prefix is: \`${config.prefix}\`\nYou can also mention me ${client.user} to get prefix info.`)
-        .setThumbnail(client.user.displayAvatarURL())
+        .setThumbnail(client.user.displayAvatarURL)
         .addField('❯ Developer', `<@${config.owner}>`, true)
         .addField('❯ Bot Version', `${config.version}`, true)
         .addField('❯ Library', `${config.library}`, true)
