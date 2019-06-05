@@ -1,10 +1,14 @@
 const { RichEmbed } = require('discord.js');
-const randomPuppy = require('random-puppy');
+const req = require('superagent');
+const { ksofttoken } = require('../../config.json');
 
 module.exports = {
     name: 'ecchi',
-    description: 'Get random ecchi',
+    description: 'Fetch random ecchi.',
     execute: async (client, message, args) => {
+        const { body: { image_url: img, title: title, source: url, subreddit: redd } } = await req
+        .get('https://api.ksoft.si/images/rand-reddit/ecchi')
+        .set('Authorization', `Bearer ${ksofttoken}`);
 
         let embednotnsfw = new RichEmbed()
         .setTitle('NSFW Error')
@@ -15,14 +19,12 @@ module.exports = {
             return message.channel.send(embednotnsfw);
             
         }
-
-        randomPuppy('ecchi')
-            .then(url => {
-                const embed = new RichEmbed()
-                .setTitle(`Ecchi`)
-                .setImage(url)
-                .setColor('#363942')
-    return message.channel.send({ embed });
-            })
+    const embed = new RichEmbed()
+        .setTitle(title)
+        .setURL(url)
+        .setColor('#363942')
+        .setImage(img)
+        .setFooter(`KSOFT.SI | ` + redd);
+    return message.channel.send({embed});
 }
 }

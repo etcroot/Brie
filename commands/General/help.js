@@ -111,7 +111,6 @@ module.exports = {
             \`${config.prefix}pgif\` → get random porn gifs.
             \`${config.prefix}ecchi\` → get random ecchi.
             \`${config.prefix}hentai\` → get random hentai.
-            \`${config.prefix}lewd\` → get random lewds.
             \`${config.prefix}thighs\` → get random thighs.
             \`${config.prefix}hthighs\` → get random anime thighs.
             \`${config.prefix}yuri\` → get random yuri.
