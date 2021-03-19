@@ -18,7 +18,7 @@
     "node-fetch": "^2.6.1",
     "node-gyp": "^4.0.0",
     "node-opus": "^0.3.3",
-    "opusscript": "0.0.6",
+    "opusscript": "0.0.8",
     "random-puppy": "^1.1.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.6",
